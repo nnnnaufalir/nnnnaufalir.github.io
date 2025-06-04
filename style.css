@@ -1,58 +1,140 @@
 /* style.css */
-/* Gaya kustom kamu akan ditambahkan di sini */
 
 /* Palet Warna Biru Kustom (Contoh) */
 :root {
-  --biru-bootstrap-default: #0d6efd; /* Biru primer standar Bootstrap */
-  --biru-navbar: #003870; /* Biru gelap untuk navbar */
-  --biru-heading: #004a94; /* Biru untuk judul-judul section */
-  --biru-link: #0066cc; /* Biru untuk link */
-  --biru-link-hover: #004c99; /* Biru untuk link saat disorot */
-  --biru-latar-terang: #e7f0ff; /* Biru sangat terang untuk latar belakang section */
-  --biru-tombol-outline: #0d6efd; /* Biru untuk outline tombol */
-}
-.navbar {
-  /* Menargetkan navbar kita yang masih punya kelas bg-dark */
-  background-color: var(--biru-navbar) !important; /* Paksa ganti warna latar */
+  --biru-bootstrap-default: #0d6efd;
+  --biru-navbar: #003870;
+  --biru-heading: #004a94;
+  --biru-link: #0056b3; /* Sedikit disesuaikan dari sebelumnya */
+  --biru-link-hover: #003d80; /* Sedikit disesuaikan dari sebelumnya */
+  --biru-latar-terang: #e9f2fc; /* Sedikit disesuaikan agar lebih lembut */
+  --biru-tombol-outline: #0d6efd;
+  /* Tambahan untuk Font */
+  --font-utama: "Open Sans", sans-serif;
+  --font-judul: "Poppins", sans-serif;
 }
 
-.bg-dark {
-  /* Menargetkan navbar kita yang masih punya kelas bg-dark */
-  background-color: var(--biru-navbar) !important; /* Paksa ganti warna latar */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  /* Tambahkan padding atas seukuran tinggi navbar + sedikit ruang ekstra */
-  /* Navbar Bootstrap biasanya sekitar 56px tingginya, kita beri sedikit lebih. */
-  padding-top: 70px;
+  font-family: var(--font-utama);
+  padding-top: 70px; /* Untuk fixed-top navbar */
+  line-height: 1.7; /* Keterbacaan teks yang lebih baik */
+  color: #333; /* Warna teks body default yang sedikit lebih lembut dari hitam pekat */
 }
 
-#hero h1, /* Judul utama di Hero Section */
+/* Navbar */
+.navbar.fixed-top {
+  /* Lebih spesifik dari hanya .navbar */
+  background-color: var(--biru-navbar) !important;
+}
+/* Pastikan kelas bg-dark di HTML navbar tetap ada jika ingin rule ini menimpa */
+/* Atau, hapus bg-dark dari HTML dan hanya andalkan style ini */
+
+.navbar-brand {
+  font-family: var(--font-judul);
+  font-weight: 700; /* Bold */
+}
+
+/* Judul Section */
+#hero h1,
 #about h2,
 #projects h2,
 #contact h2 {
   color: var(--biru-heading);
+  font-family: var(--font-judul);
+  font-weight: 700; /* Bold */
 }
 
+/* Penyesuaian khusus untuk judul Hero agar lebih menonjol */
+#hero h1 {
+  font-weight: 700; /* Atau bisa lebih tebal jika font mendukung */
+}
+
+/* Links */
 a {
   color: var(--biru-link);
+  text-decoration: none; /* Hapus garis bawah default, Bootstrap biasanya sudah melakukan ini */
 }
 
 a:hover {
-  /* Warna link saat mouse di atasnya */
   color: var(--biru-link-hover);
+  text-decoration: none; /* Pastikan tidak ada garis bawah saat hover juga */
+}
+
+/* Tombol */
+.btn-primary {
+  background-color: var(--biru-bootstrap-default);
+  border-color: var(--biru-bootstrap-default);
+  font-weight: 600; /* Sedikit tebal untuk tombol */
+  padding: 0.5rem 1.25rem; /* Sedikit padding lebih besar */
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--biru-link-hover); /* Warna hover yang lebih gelap */
+  border-color: var(--biru-link-hover);
 }
 
 .btn-outline-secondary {
   border-color: var(--biru-tombol-outline);
   color: var(--biru-tombol-outline);
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .btn-outline-secondary:hover {
   background-color: var(--biru-tombol-outline);
-  color: #fff; /* Teks putih saat di-hover */
+  color: #fff;
 }
 
+/* Latar Belakang Section Kustom */
 .bg-biru-lembut {
+  /* Ini sudah kamu definisikan, pastikan nilainya sesuai */
   background-color: var(--biru-latar-terang);
+}
+
+/* Penyesuaian pada bg-light Bootstrap jika ingin menggunakan warna biru terang kita */
+#projects.bg-light {
+  background-color: var(--biru-latar-terang) !important; /* Menimpa bg-light Bootstrap */
+}
+
+/* Efek Hover pada Kartu */
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border: 1px solid #dee2e6; /* Border default kartu */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+  border-color: var(--biru-bootstrap-default); /* Border biru saat hover */
+}
+
+.card-title {
+  font-family: var(--font-judul);
+  font-weight: 600; /* Semi-bold */
+  color: var(--biru-heading); /* Warna judul kartu */
+}
+
+/* Penyesuaian kecil lainnya */
+.lead {
+  font-weight: 400; /* Lead paragraph agar tidak terlalu tebal jika font body sudah cukup jelas */
+}
+
+hr.opacity-50 {
+  border-top-color: var(--biru-heading); /* Garis hr agar senada */
+}
+
+footer.bg-dark {
+  /* Menargetkan elemen footer yang memiliki kelas .bg-dark */
+  background-color: var(--biru-navbar) !important; /* Menggunakan variabel warna navbar */
+}
+
+.tombolKembaliKeAtas {
+  z-index: 999; /* Pastikan tombol di atas elemen lain */
+  /* Ukuran dan padding sudah diatur inline, tapi bisa juga di sini */
 }
