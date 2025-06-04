@@ -1,0 +1,1 @@
+dibuat oleh AI GEMINI
