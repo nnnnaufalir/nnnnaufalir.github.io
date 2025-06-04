@@ -2,6 +2,7 @@
 /* Gaya kustom kamu akan ditambahkan di sini */
 
 body {
-  /* Contoh: Tambahkan sedikit padding atas agar konten tidak terlalu mepet ke navbar nanti saat kita buat navbar fixed-top */
-  /* padding-top: 70px; */
+  /* Tambahkan padding atas seukuran tinggi navbar + sedikit ruang ekstra */
+  /* Navbar Bootstrap biasanya sekitar 56px tingginya, kita beri sedikit lebih. */
+  padding-top: 70px;
 }
