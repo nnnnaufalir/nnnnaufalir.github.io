@@ -239,11 +239,6 @@
             </div>
         </div>
     </section>
-    <a href="#hero" id="tombolKembaliKeAtas"
-        class="btn btn-primary position-fixed bottom-0 end-0 m-3 p-2 rounded-circle shadow d-none"
-        title="Kembali ke Atas" style="width: 40px; height: 40px; line-height: 1; font-size: 1.2rem;">
-        <i class="bi bi-arrow-up-short"></i>
-    </a>
     <footer class="bg-dark text-white text-center py-4 mt-auto">
         <div class="container">
             <p class="mb-1">&copy; <span id="currentYear"></span> Naufal Ilham Ramadhan. Hak Cipta Dilindungi.</p>
@@ -259,12 +254,20 @@
             </div>
         </div>
     </footer>
+    <a href="#hero" id="tombolKembaliKeAtas"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-3 p-2 rounded-circle shadow d-none"
+        title="Kembali ke Atas" style="width: 40px; height: 40px; line-height: 1; font-size: 1.2rem;">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
     <script>
         // Inisialisasi AOS
         AOS.init({
@@ -275,7 +278,11 @@
         });
 
         // Inisialisasi Typed.js
-        if (document.getElementById('profesi-yang-diketik')) {
+        // Pastikan elemen dengan id 'profesi-yang-diketik' ada di HTML mu
+        // Teks "APA AJA!" yang kamu tulis di HTML mungkin akan tetap ada di samping hasil ketikan.
+        // Kamu mungkin mau menghapus "APA AJA!" atau menyesuaikan penempatannya.
+        const typedElement = document.getElementById('profesi-yang-diketik');
+        if (typedElement) {
             var typed = new Typed('#profesi-yang-diketik', {
                 strings: ['Web Developer.', 'Mahasiswa Inspiratif.', 'Problem Solver Kreatif.', 'Pembelajar Seumur Hidup.'], // Ganti dengan daftar profesi/deskripsimu
                 typeSpeed: 70,    // Kecepatan mengetik
@@ -286,22 +293,28 @@
             });
         }
 
+        // Fungsi Tombol Kembali ke Atas
         const tombolKembali = document.getElementById("tombolKembaliKeAtas");
 
-        window.onscroll = function () { scrollFunction() };
+        if (tombolKembali) { // Tambahkan pengecekan jika elemen ada
+            window.onscroll = function () { scrollFunction() };
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                tombolKembali.classList.remove("d-none"); // Tampilkan tombol
-                tombolKembali.classList.add("d-block");
-            } else {
-                tombolKembali.classList.remove("d-block");
-                tombolKembali.classList.add("d-none");  // Sembunyikan tombol
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    tombolKembali.classList.remove("d-none"); // Tampilkan tombol
+                    tombolKembali.classList.add("d-block");
+                } else {
+                    tombolKembali.classList.remove("d-block");
+                    tombolKembali.classList.add("d-none");  // Sembunyikan tombol
+                }
             }
         }
 
         // Script untuk menampilkan tahun sekarang secara dinamis di footer
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
+        const currentYearElement = document.getElementById("currentYear");
+        if (currentYearElement) { // Tambahkan pengecekan jika elemen ada
+            currentYearElement.textContent = new Date().getFullYear();
+        }
     </script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
