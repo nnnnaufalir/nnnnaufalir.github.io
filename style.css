@@ -1,8 +1,58 @@
 /* style.css */
 /* Gaya kustom kamu akan ditambahkan di sini */
 
+/* Palet Warna Biru Kustom (Contoh) */
+:root {
+  --biru-bootstrap-default: #0d6efd; /* Biru primer standar Bootstrap */
+  --biru-navbar: #003870; /* Biru gelap untuk navbar */
+  --biru-heading: #004a94; /* Biru untuk judul-judul section */
+  --biru-link: #0066cc; /* Biru untuk link */
+  --biru-link-hover: #004c99; /* Biru untuk link saat disorot */
+  --biru-latar-terang: #e7f0ff; /* Biru sangat terang untuk latar belakang section */
+  --biru-tombol-outline: #0d6efd; /* Biru untuk outline tombol */
+}
+.navbar {
+  /* Menargetkan navbar kita yang masih punya kelas bg-dark */
+  background-color: var(--biru-navbar) !important; /* Paksa ganti warna latar */
+}
+
+.bg-dark {
+  /* Menargetkan navbar kita yang masih punya kelas bg-dark */
+  background-color: var(--biru-navbar) !important; /* Paksa ganti warna latar */
+}
+
 body {
   /* Tambahkan padding atas seukuran tinggi navbar + sedikit ruang ekstra */
   /* Navbar Bootstrap biasanya sekitar 56px tingginya, kita beri sedikit lebih. */
   padding-top: 70px;
+}
+
+#hero h1, /* Judul utama di Hero Section */
+#about h2,
+#projects h2,
+#contact h2 {
+  color: var(--biru-heading);
+}
+
+a {
+  color: var(--biru-link);
+}
+
+a:hover {
+  /* Warna link saat mouse di atasnya */
+  color: var(--biru-link-hover);
+}
+
+.btn-outline-secondary {
+  border-color: var(--biru-tombol-outline);
+  color: var(--biru-tombol-outline);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--biru-tombol-outline);
+  color: #fff; /* Teks putih saat di-hover */
+}
+
+.bg-biru-lembut {
+  background-color: var(--biru-latar-terang);
 }
