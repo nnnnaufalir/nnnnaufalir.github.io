@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portofolio Naufal Ilham Ramadhan</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,12 +20,17 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link href="style.css" rel="stylesheet">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Portofolio Naufal Ilham Ramadhan</a>
+            <a class="navbar-brand" href="#hero">
+                <img src="images/logo-saya.png" alt="Logo Naufal" class="logo-navbar">
+                Naufal Ilham Ramadhan
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,9 +65,9 @@
                 <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
                     <h1 class="display-5 fw-bold lh-1 mb-3">Halo, Saya Naufal Ilham Ramadhan!</h1>
                     <p class="lead">
-                        Saya seorang <strong class="fw-semibold"><span id="profesi-yang-diketik"></span>APA
-                            AJA!</strong><br>yang bersemangat dalam <strong class="fw-semibold">[Passion Tetap Atau
-                            Dihapus Saja Bagian Ini]</strong>.
+                        Saya seorang <strong class="fw-semibold"><span id="profesi-yang-diketik"></span></strong><br>
+                        yang bersemangat dalam <strong class="fw-semibold">merancang dan mengembangkan solusi teknologi
+                            cerdas untuk masa depan.</strong>
                     </p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         <a href="#projects" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Lihat Proyek
@@ -263,11 +269,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
     <script>
         // Inisialisasi AOS
         AOS.init({
@@ -277,28 +280,29 @@
             delay: 100,    // Jeda default sebelum animasi dimulai
         });
 
-        // Inisialisasi Typed.js
-        // Pastikan elemen dengan id 'profesi-yang-diketik' ada di HTML mu
-        // Teks "APA AJA!" yang kamu tulis di HTML mungkin akan tetap ada di samping hasil ketikan.
-        // Kamu mungkin mau menghapus "APA AJA!" atau menyesuaikan penempatannya.
+        // KONTEN BARU: Daftar string untuk Typed.js diperbarui
         const typedElement = document.getElementById('profesi-yang-diketik');
         if (typedElement) {
             var typed = new Typed('#profesi-yang-diketik', {
-                strings: ['Web Developer.', 'Mahasiswa Inspiratif.', 'Problem Solver Kreatif.', 'Pembelajar Seumur Hidup.'], // Ganti dengan daftar profesi/deskripsimu
-                typeSpeed: 70,    // Kecepatan mengetik
-                backSpeed: 40,    // Kecepatan menghapus
-                backDelay: 1500,  // Jeda sebelum mulai menghapus
-                loop: true,       // Apakah akan mengulang?
-                smartBackspace: true // Hanya menghapus bagian yang berbeda dari string sebelumnya
+                strings: [
+                    'Peneliti Robotika.',
+                    'Spesialis Embedded Systems.',
+                    'Inovator Teknologi IoT.',
+                    'Pengembang Solusi AI.',
+                    'Desainer Sistem Elektronika.'
+                ],
+                typeSpeed: 70,
+                backSpeed: 40,
+                backDelay: 1500,
+                loop: true,
+                smartBackspace: true
             });
         }
 
         // Fungsi Tombol Kembali ke Atas
         const tombolKembali = document.getElementById("tombolKembaliKeAtas");
-
         if (tombolKembali) { // Tambahkan pengecekan jika elemen ada
             window.onscroll = function () { scrollFunction() };
-
             function scrollFunction() {
                 if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                     tombolKembali.classList.remove("d-none"); // Tampilkan tombol
@@ -316,7 +320,6 @@
             currentYearElement.textContent = new Date().getFullYear();
         }
     </script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
 
 </html>

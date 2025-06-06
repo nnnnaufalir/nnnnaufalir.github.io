@@ -138,3 +138,18 @@ footer.bg-dark {
   z-index: 999; /* Pastikan tombol di atas elemen lain */
   /* Ukuran dan padding sudah diatur inline, tapi bisa juga di sini */
 }
+
+.navbar-brand {
+  padding-top: 0.2rem; /* Mengurangi padding default agar logo lebih pas */
+  padding-bottom: 0.2rem;
+  display: flex; /* Mengaktifkan flexbox */
+  align-items: center; /* Menyelaraskan item (logo & teks) secara vertikal di tengah */
+}
+
+.logo-navbar {
+  width: 40px; /* Atur lebar logo */
+  height: 40px; /* Atur tinggi logo SAMA DENGAN LEBAR */
+  border-radius: 50%; /* Membuatnya bulat */
+  object-fit: cover; /* Penting jika gambar aslinya tidak persegi */
+  margin-right: 12px; /* Memberi jarak antara logo dan teks nama */
+}
